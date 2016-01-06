@@ -11,7 +11,7 @@
 
 @implementation AddressBookManager
 
-+ (void)getAddressBookWithComplete:(CompleteHandler)completeHandler errorHandler:(ErrorHandler)errorHandler{
++ (void)getAddressBookWithComplete:(CompleteHandler)completeHandler errorHandler:(ErrorHandler)errorHandler {
     if (&ABAddressBookRequestAccessWithCompletion != NULL) {    //检查是否是iOS6
         ABAddressBookRef abRef = ABAddressBookCreateWithOptions(NULL, NULL);
         if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
@@ -37,7 +37,7 @@
     }
 }
 
-+ (NSDictionary *)addressInfo{
++ (NSDictionary *)addressInfo {
     //查询所有，这里我们可以用来进行下一步操作
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     NSMutableDictionary *peopleDic = [NSMutableDictionary dictionary];
